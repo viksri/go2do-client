@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go2do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="go2do.js"></script>
+</head>
+<body id="body" class="flex-container">
+    <div id="header" class="flex-container">
+        <div id="logo">Go2Do</div>
+    </div>
+    <div id="main" class="flex-container">
+        <div id="sidebar" class="flex-container">
+            <div id="new-task" class="new-task">
+                <input name="title" type="text" placeholder="+ Add new task for today" id="new-task-title"/>
+                <div id="new-task-details">
+                    <textarea name="description" rows="20" cols="30" id="new-task-desc" style="resize: none" placeholder="details for the task"></textarea>
+                    <div id="new-task-footer">
+                        <input name="due-date" type="date" id="new-task-date"/>
+                        <div id="new-task-buttons" class="new-task-buttons">
+                            <input type="reset" id="new-task-cancel" value="&#x274c">
+                            <input type="submit" id="new-task-save" value="&#10004">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="flex-container">
+            <input name="title" type="text" placeholder="" id="task-details-title" onchange="enableSaveAndCancel()"/>
+            <textarea name="description" rows="30" cols="30" id="task-details-desc" style="resize: none" onchange="enableSaveAndCancel()">
+                Details for the task...
+            </textarea>
+            <div id="task-details-footer">
+                <input name="due-date" type="date" id="task-details-date" onchange="enableSaveAndCancel()"/>
+                <div id="task-details-buttons" class="task-details-buttons">
+                    <input type="reset" id="task-details-delete" value="Delete">
+                    <input type="reset" id="task-details-cancel" value="Cancel" disabled>
+                    <input type="submit" id="task-details-save" value="Save Changes" disabled>
+                </div>
+            </div>
+        </div>
+        <div id="no-content">
+            <h1>All done!!! No pending tasks to show</h1>
+        </div>
+    </div>
+</body>
+</html>
